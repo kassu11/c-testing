@@ -1,0 +1,1 @@
+drink == 'c' ? "coffee" : "tea"
