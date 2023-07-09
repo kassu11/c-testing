@@ -2,18 +2,17 @@
 
 int main(void)
 {
-	char fName[255] = "", lName[255] = "", number[255] = "";
+	char fName[255] = "";
 	FILE *file_handlePhoneRead = fopen("phonedir.txt", "r");
 
 	int rowNum;
-	fscanf(file_handlePhoneRead, "%d", &rowNum);
+	fscanf(file_handlePhoneRead, "%d\n", &rowNum);
 
 	for (int i = 0; i < 100; i++)
 	{
 		if (fgets(fName, 255, file_handlePhoneRead) == NULL)
 			break; // Breaks when file is empty
-		fscanf(file_handlePhoneRead, "%s %s %s", &fName, &lName, &number);
-		printf("%s %s %s\n", fName, lName, number);
+		printf("%s", fName);
 	}
 	fclose(file_handlePhoneRead);
 
